@@ -124,7 +124,7 @@
 
 
 
-# basic class inheritence
+# basic class inheritance
 
   class Message
     @@messages_sent = 0
@@ -145,8 +145,73 @@
   end
 
 
+# basic class
+
+  class Computer
+    @@users = {}
+
+    def initialize(username, password)
+      @username = username
+      @password = password
+      @files = {}
+      @@users[username] = password
+    end
+
+    def create(filename)
+      time = Time.now
+      @files[filename] = time
+      puts "File #{filename} created at #{time} for user #{@username}"
+    end
+
+    def Computer.get_users
+      return @@users
+    end
+  end
+
+  my_computer = Computer.new("Tim", "12345")
 
 
+
+# banking class exercise
+
+  class Account
+    attr_reader :name, :balance
+
+    def initialize(name, balance = 100)
+      @name = name
+      @balance = balance
+    end
+
+    def display_balance(pin_n)
+      if pin == pin_n
+        puts "balance is #{@balance}"
+      else
+        pin_error
+      end
+    end
+
+    def withdraw(pin_n, amount)
+      if pin_n == pin
+        @balance -= amount
+        puts "Withdrew #{amount}. New balance: $#{@balance}."
+      else
+        pin_error
+      end
+    end
+
+    private
+
+    def pin
+      @pin = 1234
+    end
+
+    def pin_error
+      return "Access denied: incorrect PIN."
+    end
+
+  end
+
+  checking_account = Account.new("checks", 1_000_000)
 
 
 
