@@ -1,4 +1,4 @@
-I. Initial Server Setup with Ubuntu 14.04 (https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04)
+I. Initial Server Setup with Ubuntu 14.04 (https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04) part of the series
 
     1) Root login
         ssh root@SERVER_IP_ADDRESS
@@ -40,3 +40,19 @@ II. Ruby on Rails with rbenv on Ubuntu (https://www.digitalocean.com/community/t
         sudo apt-get install nodejs
 
 III. How To Use PostgreSQL with Your Ruby on Rails Application on Ubuntu (https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-14-04)
+
+    1) Install PostgreSQL
+        sudo apt-get update
+        sudo apt-get install postgresql postgresql-contrib libpq-dev
+
+    2) Create Database User
+        sudo -u postgres createuser -s pguser
+        sudo -u postgres psql (this enters PG console mode)
+            \password pguser
+            \q
+
+    3) Configure Database Connection
+        vi config/database.yml (rails folder)
+              host: localhost
+              username: pguser
+              password: pguser_password
