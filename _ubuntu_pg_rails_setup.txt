@@ -56,3 +56,118 @@ III. How To Use PostgreSQL with Your Ruby on Rails Application on Ubuntu (https:
               host: localhost
               username: pguser
               password: pguser_password
+
+             ( development:
+                adapter: postgresql
+                encoding: unicode
+                database: myapp_development
+                pool: 5
+                username: myapp
+                password: password1
+
+             test:
+                adapter: postgresql
+                encoding: unicode
+                database: myapp_test
+                pool: 5
+                username: myapp
+                password: password1 )
+
+             (username: appname
+              password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>)
+
+        rake db:setup
+
+    4) Install rbenv-vars Plugin
+        cd ~/.rbenv/plugins
+        git clone https://github.com/sstephenson/rbenv-vars.git
+
+    5) Set Environment Variables
+        cd ~/appname
+        rake secret (copy secret key here)
+
+        vi .rbenv-vars
+            SECRET_KEY_BASE=your_generated_secret (key from earlier)
+            APPNAME_DATABASE_PASSWORD=prod_db_pass (DB password)
+
+        rbenv vars (views the variables)
+
+    6) Create Production Database
+        RAILS_ENV=production rake db:create
+
+    7) Install Unicorn
+        vi Gemfile
+            gem 'unicorn'
+        bundle
+
+    8) Configure Unicorn
+        vi config/unicorn.rb
+            # set path to application
+            app_dir = File.expand_path("../..", __FILE__)
+            shared_dir = "#{app_dir}/shared"
+            working_directory app_dir
+
+
+            # Set unicorn options
+            worker_processes 2
+            preload_app true
+            timeout 30
+
+            # Set up socket location
+            listen "#{shared_dir}/sockets/unicorn.sock", :backlog => 64
+
+            # Logging
+            stderr_path "#{shared_dir}/log/unicorn.stderr.log"
+            stdout_path "#{shared_dir}/log/unicorn.stdout.log"
+
+            # Set master PID location
+            pid "#{shared_dir}/pids/unicorn.pid"
+
+        mkdir -p shared/pids shared/sockets shared/log (creating an folder we referenced in the log)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
