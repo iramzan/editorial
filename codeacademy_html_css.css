@@ -18,3 +18,10 @@ li > p {
 }
 
 
+/*
+
+As we mentioned, certain selectors will "override" others if they have a greater specificity value.
+ul li p { is more specific CSS than just p {, so when CSS sees tags that are both <p> tags and happen
+to be inside unordered lists, it will apply the more specific styling (ul li p {) to the text inside the lists.
+
+*/
