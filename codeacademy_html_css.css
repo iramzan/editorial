@@ -27,7 +27,7 @@ to be inside unordered lists, it will apply the more specific styling (ul li p {
 */
 
 
-/*
+/* PSEUDO SELECTORS
 
 A pseudo-class selector is a way of accessing HTML items that aren't part of the document tree
 (remember the tree structure we talked about earlier?). For instance, it's very easy to see where
@@ -39,5 +39,15 @@ For example, we saw we could change a link's text-decoration property to make it
 other than blue and underlined. Using pseudo selectors, you can control the appearance of
 unvisited and visited links—even links the user is hovering over but hasn't clicked!
 
+---------------------------
 
+Another useful pseudo-class selector is first-child.
+It's used to apply styling to only the elements that are the first children of their parents. For instance:
+
+p:first-child {
+    color: red;
+}
+Would make all paragraphs that are the first children of their parent elements red.
+
+------------------
 */
