@@ -50,4 +50,27 @@ p:first-child {
 Would make all paragraphs that are the first children of their parent elements red.
 
 ------------------
+
+nth-child; you just add the child's number in parentheses after the pseudo-class selector.
+
+For example,
+
+p:nth-child(2) {
+    color: red;
+}
+
+Would turn every paragraph that is the second child of its parent element red.
+The element that is the child goes before :nth-child; its parent element is the element that contains it.
+
+------------------
+
+
+
 */
+
+
+/* ROUND DIVS */
+
+div {
+    border-radius: 60%;
+ }
