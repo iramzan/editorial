@@ -111,4 +111,51 @@ If we're talking about a <p> element, the "stuff" is the text of the paragraph.
 
 You'll see abbreviations like TM, TB, and TP in the diagram.
 These stand for "top margin," "top border," and "top padding."
-As we'll see, we can adjust the top, right, left, and bottom padding, border, and margin individually. -->
+As we'll see, we can adjust the top, right, left, and bottom padding, border, and margin individually.
+
+---------
+
+For instance, if we take an HTML element with a specific width and set
+its margin to auto, this tells the document to automatically put equal
+left and right margins on our element, centering it on the page.
+
+---------
+
+If you want to move an element in the other direction,
+you can give CSS a negative value: margin-left: -20px will move the element twenty pixels to the left.
+
+---------
+
+If you tell an element to clear: left, it will immediately move below any
+floating elements on the left side of the page; it can also clear elements on the right.
+If you tell it to clear: both, it will get out of the way of elements floating on the left and right!
+
+---------------------------
+
+POSITIONING
+http://www.barelyfitz.com/screencast/html-training/css/positioning/
+http://stackoverflow.com/questions/4457790/difference-between-style-positionabsolute-and-style-positionrelative
+
+The first type of positioning is ABSOLUTE positioning.
+When an element is set to position: absolute, it's then positioned in relation
+to the first parent element it has that doesn't have position: static.
+If there's no such element, the element with position: absolute gets positioned relative to <html>.
+
+---------
+
+RELATIVE positioning is more straightforward: it tells the element
+to move relative to where it would have landed if it just had the default static positioning.
+
+If you give an element relative positioning and tell it to have a margin-top of 10px,
+it doesn't move down ten pixels from any particular thing—it moves down ten pixels from where it otherwise would have been.
+
+---------
+
+Finally, FIXED positioning anchors an element to the browser window—you can think of it as gluing the element to the screen.
+If you scroll up and down, the fixed element stays put even as other elements scroll past.
+
+
+
+
+
+-->
