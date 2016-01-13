@@ -100,3 +100,30 @@ var $paragraph = $("p"); // existing element
 $("div").after($paragraph); // Move it!
 // Same as:
 $("div").after($("p"));
+
+
+// .empty() and .remove()
+// .empty() deletes an element's content and all its descendants.
+// .remove(), not only deletes an element's content, but deletes the element itself.
+
+$('p').remove();
+
+
+// addClass() & removeClass()
+
+$(document).ready(function(){
+    $('#text').click(function() {
+        $(this).addClass('highlighted');
+    });
+
+});
+
+
+// .toggleClass() removes that class; if the target element doesn't have that class, .toggleClass() adds it.
+
+
+// using css() with multiple params
+
+$(document).ready(function() {
+$('div').css({"height": "200px", "width": "200px", "border-radius": "10px"});
+});
