@@ -94,6 +94,8 @@ $(document).ready(function(){
 });
 
 
+// !!! $(target).after(what_we_move)
+
 var $paragraph = $("p"); // existing element
 $("div").after($paragraph); // Move it!
 // Same as:
