@@ -125,5 +125,26 @@ $(document).ready(function(){
 // using css() with multiple params
 
 $(document).ready(function() {
-$('div').css({"height": "200px", "width": "200px", "border-radius": "10px"});
+    $('div').css({"height": "200px", "width": "200px", "border-radius": "10px"});
 });
+
+
+// .html() can be used to set the contents of the first element match it finds.
+
+$(document).ready(function(){
+    $('p').html('jQuery magic in action!');
+});
+
+
+// Making the small function to take content from the form and add to the list
+
+// 1.
+
+$(document).ready(function(){
+    $('#button').click(function(){
+        var toAdd = $('input[name=checkListItem]').val();
+    });
+});
+
+
+
