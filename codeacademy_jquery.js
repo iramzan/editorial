@@ -146,5 +146,40 @@ $(document).ready(function(){
     });
 });
 
+// !!! VERY IMPORTANT !!!
+//
+// Great job! Finally, we want to be able to check items off our list.
+//
+//  You might think we could do this:
+//
+//  $('.item').click(function() {
+//    $(this).remove();
+//  });
+
+//  and that's not a bad idea. The problem is that it won't work—jQuery looks for
+//  all the .items when the DOM is loaded, so by the time your document is ready,
+//  it's already decided there are no .items to .remove(), and your code won't work.
+//
+//  For this, we'll need a new event handler: .on(). You can think of .on() as a
+//  general handler that takes the event, its selector, and an action as inputs.
+//
+//  The syntax looks like this:
+//
+//  $(document).on('event', 'selector', function() {
+//    Do something!
+//  });
+//
+// In this case, 'event' will be 'click', 'selector' will be '.item', and the thing we'll want to do is call .remove() on this.
 
 
+$(document).ready(function(){
+    $('#button').click(function(){
+        var toAdd = $('input[name=checkListItem]').val();
+        $('.list').append('<div class="item">' + toAdd + '</div>');
+    });
+
+    $(document).on('click','.item', function()
+    {
+        $(this).remove()
+    });
+});
