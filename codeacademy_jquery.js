@@ -184,4 +184,41 @@ $(document).ready(function(){
     });
 });
 
-//
+
+// click and hover events
+
+$(document).ready(function(){
+    $('div').click(function(){
+        $(this).fadeOut('fast');
+
+    });
+
+    $('div').hover(function(){
+        $(this).addClass('red');
+    });
+});
+
+
+// double click events
+
+$(document).ready(function(){
+    $('div').dblclick(function(){
+        $(this).fadeOut('fast');
+    });
+});
+
+
+// hover/unhover taking two functions
+
+$(document).ready(function(){
+
+    $('div').hover(
+        function(){
+            $(this).addClass('active');
+        },
+        function(){
+            $(this).removeClass('active');
+        }
+    );
+
+});
