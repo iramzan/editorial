@@ -222,3 +222,30 @@ $(document).ready(function(){
     );
 
 });
+
+
+// focus event
+
+$(document).ready(function(){
+    $('input').focus(function(){
+        $(this).css('outline-color', '#FF0000');
+    });
+});
+
+
+// keydown event
+
+$(document).ready(function(){
+    $(document).keydown(function(){
+        $('div').animate({left:'+=10px'},500);
+    });
+});
+
+
+//  keydown with specific keys
+
+$(document).ready(function(){
+    $(document).keydown(function(key){
+
+    });
+});
