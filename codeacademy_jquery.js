@@ -272,3 +272,42 @@ $(document).ready(function() {
         }
     });
 });
+
+
+$(document).ready(function(){
+
+    // Fill in the blanks!
+    $('img').animate({ top: '+=100px'}, 1000 );
+});
+
+
+// jQuery UI
+
+$(document).ready(function(){
+    $('div').click(function(){
+        $(this).effect('explode');
+    });
+});
+
+$(document).ready(function(){
+    $('div').click(function(){
+        $(this).effect('bounce', {times:3}, 500);
+    });
+});
+
+$(document).ready(function(){
+    $('#car').draggable();
+});
+
+$(document).ready(function(){
+    $('ol').selectable();
+});
+
+$(document).ready(function(){
+    $('ol').sortable();
+});
+
+
+
+
+
