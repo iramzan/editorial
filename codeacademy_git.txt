@@ -22,5 +22,5 @@ Git enables you to rewind to the part before you made the wrong turn and create 
 git reset SHA (git reset 5d69206) - resets to a commit SHA (first 7 digits of commit code)
 https://s3.amazonaws.com/codecademy-content/courses/learn-git/git-diagram-3.svg
 
-
-
+git branch - you can use the command below to answer the question: “which branch am I on?”
+git branch new_branch - to create a new branch
