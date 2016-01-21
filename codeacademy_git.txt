@@ -24,3 +24,4 @@ https://s3.amazonaws.com/codecademy-content/courses/learn-git/git-diagram-3.svg
 
 git branch - you can use the command below to answer the question: “which branch am I on?”
 git branch new_branch - to create a new branch
+git checkout branch_name - with this you can switch to the new branch
