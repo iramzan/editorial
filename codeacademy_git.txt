@@ -26,3 +26,4 @@ git branch - you can use the command below to answer the question: “which bran
 git branch new_branch - to create a new branch
 git checkout branch_name - with this you can switch to the new branch
 git merge branch_name - merging branches
+
