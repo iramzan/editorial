@@ -27,3 +27,43 @@ git branch new_branch - to create a new branch
 git checkout branch_name - with this you can switch to the new branch
 git merge branch_name - merging branches
 
+...
+Let's say you decide you'd like to merge the changes from fencing into master.
+Here's where the trouble begins! You've made commits on separate branches that alter
+the same line in conflicting ways. Now, when you try to merge fencing into master,
+Git will not know which version of the file to keep.
+
+    1. Switch to the master branch.
+    2. From the terminal, enter the command below:
+
+        git merge fencing
+
+        This will try to merge fencing into master.
+
+        In the output, notice the lines:
+
+        CONFLICT (content): Merge conflict in resumé.txt
+        Automatic merge failed; fix conflicts and then commit the result.
+
+    3. We must fix the merge conflict.
+
+        In the code editor, look at resume.txt. Git uses markings to indicate the HEAD (master) version of the file and the fencing version of the file, like this:
+
+        <<<<<<< HEAD
+        master version of line
+        =======
+        fencing version of line
+        >>>>>>> fencing
+
+        Git asks us which version of the file to keep: the version on master or the version on fencing. You decide you want the fencing version.
+
+        From the code editor:
+
+        Delete the content of the line as it appears in the master branch
+
+        Delete all of Git's special markings including the words HEAD and fencing. If any of Git's markings remain, for example, >>>>>>> and =======, the conflict remains.
+
+    4. Add resume.txt to the staging area.
+
+    5. Now, make a commit. For your commit message, type "Resolve merge conflict" to indicate the purpose of the commit.
+
