@@ -67,3 +67,32 @@ Git will not know which version of the file to keep.
 
     5. Now, make a commit. For your commit message, type "Resolve merge conflict" to indicate the purpose of the commit.
 
+git branch -d branch_name - deletes the git branch
+git branch -D branch_name - deletes the branch with override (will delete not fully merged branch)
+
+
+git clone remote_location clone_name - clones the remote to local machine
+git remote -v - you can see a list of a Git project's remotes with this command
+
+git fetch - This command will not merge changes from the remote into your local repository. It brings those changes onto what's called a remote branch.
+An easy way to see if changes have been made to the remote and bring the changes down to your local copy is with this command.
+
+    Now that you've merged origin/master into your local master branch, you're ready to contribute some work of your own. The workflow for Git collaborations typically follows this order:
+
+    1. Fetch and merge changes from the remote
+    2. Create a branch to work on a new project feature
+    3. Develop the feature on your branch and commit your work
+    4. Fetch and merge from the remote again (in case new commits were made while you were working)
+    5. Push your branch up to the remote for review
+
+        $ cd my-quizzes
+        $ git branch bio-questions
+        $ git checkout bio-questions
+        Switched to branch 'bio-questions'
+        $ git add biology.txt
+        $ git commit -m 'bio update'
+        [bio-questions 9413039] bio update
+         1 file changed, 5 insertions(+)
+
+                                                                            
+
