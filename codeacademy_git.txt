@@ -94,5 +94,9 @@ An easy way to see if changes have been made to the remote and bring the changes
         [bio-questions 9413039] bio update
          1 file changed, 5 insertions(+)
 
-                                                                            
+git push origin your_branch_name - will push your branch up to the remote, origin. From there,
+Sally can review your branch and merge your work into the master branch, making it part of the definitive project version.
 
+        $ git push origin bio-questions
+
+        
